@@ -1,0 +1,31 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: kry9ton/image:latest
+        environment:
+          DEVICE: miatoll_gcc
+          CODENAME: Holmes
+    steps:
+      - checkout
+      - run:
+          command: |
+            git clone https://github.com/Kry9toN-Project/Drone-CI
+            mv Drone-CI/* .
+            bash nightly.sh
+workflows:
+  version: 2
+  commit:
+    jobs:
+      - build
+  nightly:
+    triggers:
+      - schedule:
+          cron: "0 1 * * *"
+          filters:
+            branches:
+              only:
+                - main
+
+    jobs:
+      - build
