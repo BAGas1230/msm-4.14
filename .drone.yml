@@ -17,11 +17,11 @@ steps:
       from_secret: sf_pass
     DEVICE: miatoll_gcc
     POST_DIR: miatoll
-    RELEASE: false
-    CODENAME: Holmes
+    RELEASE: true
+    CODENAME: Alisha
     TYPE: BLC
     CHANGELOG: |
-      NOTES!!! A11 enforce only<br>• ashmem: Rewrite to improve clarity and performance<br>• drm/kgsl: Reduce latency while processing ioctls<br>• Checkout drivers/char/srandom from positron kernel<br>• Use GCC instead of Clang
+      NOTES!!! A11 enforce only<br>• Rebased kernel source<br>• Merge 4.14.232<br>• Add GCC Graphite Optimisation<br>• Enable BPF JIT<br>• Use GCC instead of Clang<br>• Fix USB OTG<br>• Make scheduling period more efficient<br>• Use Queued Spinlocks<br>• another improvement
   commands:
   - git clone https://github.com/Kry9toN-Project/Drone-CI
   - mv Drone-CI/* .
