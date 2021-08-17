@@ -17,11 +17,11 @@ steps:
       from_secret: sf_pass
     DEVICE: miatoll_gcc
     POST_DIR: miatoll
-    RELEASE: false
-    CODENAME: Alisha
+    RELEASE: true
+    CODENAME: Noona
     TYPE: BLC
     CHANGELOG: |
-      NOTES!!! A11 enforce only<br>• Rebased kernel source<br>• Merge 4.14.232<br>• Add GCC Graphite Optimisation<br>• Enable BPF JIT<br>• Use GCC instead of Clang<br>• Fix USB OTG<br>• Make scheduling period more efficient<br>• Use Queued Spinlocks<br>• another improvement
+      NOTES!!! A11 enforce only<br>• Disable PAN emulation<br>• Enable Devfreq Boost<br>• Disable System Trace Module<br>• TLB changes<br>• use SLMK<br>• Switch to qca6174 QCA_CLD profile<br>• Disable qcom memory dump driver<br>• Disable IPC_LOGGING<br>• atoll: Remove rcupdate.rcu_expedited=1
   commands:
   - git clone https://github.com/Kry9toN-Project/Drone-CI
   - mv Drone-CI/* .
